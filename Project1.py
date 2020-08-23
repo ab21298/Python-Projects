@@ -15,7 +15,7 @@ class Library:
         for book in self.booklist:
             print(book)
 
-    def lend_Book(self, name, book):
+    def lend_Book(self, name, last, book):
         if book not in self.lendDict.keys():
             self.lendDict.update({book: name})
             print(f"Lender-Book Dictionary has been updated successfully You can take your book now")
@@ -58,8 +58,9 @@ if __name__ == '__main__':
             ab.show_Book()
         elif user_choice == 2:
             book = input("Enter the name of the book You want to Lend : ")
-            name = input("Enter Your name : ")
-            ab.lend_Book(name, book)
+            name = input("Enter Your first name : ")
+            last = input("Enter Your last name : ")
+            ab.lend_Book(name, last, book)
         elif user_choice == 3:
             book = input("Enter the name of the book you want to add : ")
             ab.add_book(book)
